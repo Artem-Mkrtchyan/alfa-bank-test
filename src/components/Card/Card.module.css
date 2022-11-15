@@ -1,0 +1,86 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  row-gap: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32), 0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32);
+}
+
+.deleteCard {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  font-weight: 700;
+  color: var(--red);
+  background-color: rgba(240, 244, 247, .7);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+}
+
+.deleteCard:hover {
+  box-shadow: 0 0 100px var(--red);
+}
+
+
+.content {
+  display: flex;
+  padding: 10px;
+  column-gap: 15px;
+}
+
+.imgWrap {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.imgWrap img {
+  width: 100%;
+}
+
+.text {
+  flex: 1 1 auto;
+}
+
+.cardName {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.contacts a {
+  color: var(--brand);
+}
+
+.button {
+  align-self: center;
+  stroke: var(--brand);
+  fill: transparent;
+  transition: fill .2s ease-in-out;
+}
+
+.button svg:hover {
+  stroke: var(--red);
+}
+
+.buttonFollow {
+  stroke: var(--red);
+  fill: var(--red);
+}
+
+.buttonFollow svg:hover {
+  stroke: var(--brand);
+}
+
+.button svg {
+  width: 25px;
+  height: 25px;
+}
