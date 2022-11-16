@@ -1,5 +1,5 @@
 .itemList {
   display: flex;
   flex-direction: column;
-  flex: 1 1 32%;
+  flex: 0 1 32%;
 }
