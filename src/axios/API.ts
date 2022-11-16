@@ -7,6 +7,7 @@ export const instansAxios = axios.create({
 
 
 export const api = {
+  //get data user from server
   getUsers(currentPage: number = 1) {
     return instansAxios.get<TUsersDataResp>(`users?page=${currentPage}`)
   },

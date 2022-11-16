@@ -25,6 +25,10 @@ export const usersSlice = createSlice({
     fetching(state) {
       state.loading = true
     },
+    setError(state, action: PayloadAction<string>) {
+      state.loading = false
+      state.error = action.payload
+    },
     setUsersData(state, action: PayloadAction<TUsersDataResp>) {
       state.loading = false
       state.items = { ...action.payload, data: action.payload.data.map(item => ({ ...item, follow: false })) }

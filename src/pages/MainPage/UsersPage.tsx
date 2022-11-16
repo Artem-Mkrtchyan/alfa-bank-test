@@ -9,6 +9,7 @@ import { deleteUser, filtredUser, getUsers, setCurrentPage, subscribe } from '..
 import { selectors } from '../../store/selectors'
 import classNames from 'classnames'
 import styles from './UsersPage.module.css'
+import { ErrorMessage } from '../../components/ErrorForm/ErrorForm'
 
 export const UsersPage: React.FC = () => {
 
@@ -16,9 +17,7 @@ export const UsersPage: React.FC = () => {
 
   //get data from storage
   const { page, per_page, total, data } = useAppSelector(selectors.getUsers)
-  const folllowData = useAppSelector(selectors.followData)
-  const isFilter = useAppSelector(selectors.isFilter)
-  const isLoading = useAppSelector(selectors.isLoading)
+  const {error, folllowData, isFilter, loading} = useAppSelector(selectors.users)
 
   let dataUser = isFilter ? folllowData : data
 
@@ -55,7 +54,9 @@ export const UsersPage: React.FC = () => {
   return (
     <section className={styles.usersPage}>
 
-      {isLoading && <Preloader />}
+      {error && <ErrorMessage message={error} />}
+
+      {loading && <Preloader />}
 
       <button onClick={filterFollow} className={buttonFilterFollowClass}>Filter follow</button>
 

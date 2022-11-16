@@ -8,6 +8,10 @@ export type TUsersDataResp ={
   data: Array<TUser>
 }
 
+export type TRespErr = {
+  message: string
+}
+
 export enum status {
   Success = 200,
   Error = 400,
